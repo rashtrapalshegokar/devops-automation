@@ -1,0 +1,5 @@
+com\chubb\crud\example\repository\ProductRepository.class
+com\chubb\crud\example\SpringBootCrudExample2Application.class
+com\chubb\crud\example\entity\Product.class
+com\chubb\crud\example\service\ProductService.class
+com\chubb\crud\example\controller\ProductController.class
