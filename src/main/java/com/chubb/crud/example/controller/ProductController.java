@@ -1,6 +1,7 @@
 package com.chubb.crud.example.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import com.chubb.crud.example.entity.Product;
@@ -13,9 +14,16 @@ public class ProductController {
 
     @Autowired
     private ProductService service;
+    
+    @Autowired
+	private KafkaTemplate<String, Object> template;
+
+	private String topic = "rajdb";
+	
 
     @PostMapping("/addProduct")
     public Product addProduct(@RequestBody Product product) {
+    	template.send(topic, product);
         return service.saveProduct(product);
     }
 
@@ -31,6 +39,7 @@ public class ProductController {
 
     @GetMapping("/productById/{id}")
     public Product findProductById(@PathVariable int id) {
+    	template.send(topic, service.getProductById(id));
         return service.getProductById(id);
     }
 
