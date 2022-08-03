@@ -15,7 +15,7 @@ public class ProductController {
     @Autowired
 	private KafkaTemplate<String, Object> template;
 
-	private String topic = "rajdb";
+	private String topic = "rajdb1";
 	
 
     @PostMapping("/addProduct")
