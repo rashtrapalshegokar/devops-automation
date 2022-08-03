@@ -1,4 +1,8 @@
+com\chubb\crud\example\exception\BadRequestException.class
 com\chubb\crud\example\SpringBootCrudExample2Application.class
-com\chubb\crud\example\entity\Product.class
+com\chubb\crud\example\exception\ErrorDetails.class
 com\chubb\crud\example\kafka\config\KafkaPublisherConfig.class
+com\chubb\crud\example\exception\ResourceNotFoundException.class
+com\chubb\crud\example\exception\CustomeExceptionHandler.class
+com\chubb\crud\example\entity\Product.class
 com\chubb\crud\example\controller\ProductController.class
