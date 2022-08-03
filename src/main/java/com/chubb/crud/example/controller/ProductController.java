@@ -22,8 +22,10 @@ public class ProductController {
     public ResponseEntity<Product> addProduct(@RequestBody Product product) {
     	if(product.getName().isEmpty()) {
     		throw new BadRequestException("Name can't be empty");
+    	}else {
+    		template.send(topic, product);
     	}
-    	template.send(topic, product);
+    	
     	 return ResponseEntity.ok().body(product);
     }
 
